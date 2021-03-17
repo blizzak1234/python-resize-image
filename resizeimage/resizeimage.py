@@ -111,7 +111,7 @@ def resize_contain(image, size, resample=Image.LANCZOS, bg_color=(255, 255, 255,
     )
     background.paste(img, img_position)
     background.format = img_format
-    return background.convert('RGBA')
+    return background.convert('RGB')
 
 
 @validate(_width_is_big_enough)

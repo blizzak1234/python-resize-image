@@ -30,9 +30,17 @@ def validate(validator):
             if validate:
                 validator(image, size)
             return func(image, size)
+
         return wrapper
 
     return decorator
+
+
+def get_aspect_ratio(image):
+    width = image.size[0]
+    height = image.size[1]
+    ratio = width / height
+    return ratio
 
 
 def _is_big_enough(image, size):
